@@ -16,15 +16,15 @@ def get_transaction_receipt(transaction_hash: str) -> Optional[Dict]:
     :return: A dictionary containing the transaction receipt details, or None if the transaction cannot be found.
     """
 
-    # web3 = Web3(Web3.HTTPProvider(rpc_url))
-    #
-    # if not web3.is_connected():
-    #     print("unable to connect to Ethereum")
-    #     return None
-    #
-    # try:
-    #     transaction_receipt = web3.eth.get_transaction_receipt(transaction_hash)
-    #     return dict(transaction_receipt)
-    # except Exception as e:
-    #     print(f"an error occurred: {e}")
-    #     return None
+    web3 = Web3(Web3.HTTPProvider(rpc_url))
+
+    if not web3.is_connected():
+        print("unable to connect to Ethereum")
+        return None
+
+    try:
+        transaction_receipt = web3.eth.get_transaction_receipt(transaction_hash)
+        return dict(transaction_receipt)
+    except Exception as e:
+        print(f"an error occurred: {e}")
+        return None

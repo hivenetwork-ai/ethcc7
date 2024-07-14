@@ -12,18 +12,18 @@ def fetch_latest_news(query: str) -> Optional[str]:
     """
     url = f"https://api.gdeltproject.org/api/v2/doc/doc?query={query}&mode=artlist&format=json"
 
-    # try:
-    #     response = requests.get(url)
-    #     response.raise_for_status()
-    #     data = response.json()
-    #
-    #     articles = data.get("articles", [])
-    #     if articles:
-    #         summary = "\n\n".join(
-    #             [f"Title: {article.get('title')}\nLink: {article.get('url')}" for article in articles[:5]])
-    #         return summary.strip()
-    #     else:
-    #         return "No articles found."
-    # except requests.exceptions.RequestException as e:
-    #     print(f"An error occurred: {e}")
-    #     return None
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+
+        articles = data.get("articles", [])
+        if articles:
+            summary = "\n\n".join(
+                [f"Title: {article.get('title')}\nLink: {article.get('url')}" for article in articles[:5]])
+            return summary.strip()
+        else:
+            return "No articles found."
+    except requests.exceptions.RequestException as e:
+        print(f"An error occurred: {e}")
+        return None
