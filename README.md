@@ -2,6 +2,10 @@
 
 This agent uses the [Hive Agent Kit](htps://github.com/hivenetwork-ai/hive-agent-py) along with various tools to answer questions.
 
+Join our Discord community for support and discussion.
+
+[![](https://dcbadge.limes.pink/api/server/vnJvW4wZp9)](https://discord.gg/vnJvW4wZp9)
+
 ## Project Requirements
 - Python >= 3.11
 - Node >= 20.10.0
@@ -58,7 +62,3 @@ curl --location 'localhost:8000/api/v1/chat' \
 
 ## Learn More
 Powered by [HiveNetwork.ai](https://hivenetwork.ai).
-
-Join our Discord community for support and discussion.
-
-[![](https://dcbadge.limes.pink/api/server/vnJvW4wZp9)](https://discord.gg/vnJvW4wZp9)
